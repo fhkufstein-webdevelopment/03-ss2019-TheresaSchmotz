@@ -14,7 +14,6 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
 
 
     var that = this; //a trick because this is a keyword and means different things in a new context! Especially when you work with events or if you call functions outside your class "this" won't mean you!
-
     //now for the events which should fire:
     //if we leave the password field (focus is lost) - JavaScript Method "onblur" for an input field in our case the field this.passwordField
     //if we enter the password field (focus is set) - JavaScript Method "onfocus" for an input field - again in our case the field this.passwordField
