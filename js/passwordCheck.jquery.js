@@ -8,9 +8,9 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
     this.minLength = 8; //this is what we defined and what we need to consider in our length check
 
     //this attributes are set with our constructor
-    this.wrapperField = $(wrapperId);
-    this.passwordField = $(passwordInputFieldId);
-    this.passwordSubmitButton = $(passwordSubmitButtonId);
+    this.wrapperField = $(wrapperId);   //die 3 zeilen sind anders
+    this.passwordField = $(passwordInputFieldId);   //meh
+    this.passwordSubmitButton = $(passwordSubmitButtonId);  //mehh
 
 
     var that = this; //a trick because this is a keyword and means different things in a new context! Especially when you work with events or if you call functions outside your class "this" won't mean you!
@@ -28,7 +28,7 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
         that.check();
     });
 
-    this.passwordField.keydown(function() {
+    this.passwordField.keydown(function() { //hIER
         that.check();
     });
 
@@ -46,11 +46,12 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
         //we can only check if every field which with given Id exists
         //one of them would be null if one Id wouldn't exist therefore following statement would fail
         if(this.wrapperField && this.passwordField && this.passwordSubmitButton) {
+
             var longEnough = this.checkForLength();
             var hasSpecialChars = this.checkForSpecialCharacters();
 
             //if it is long enough and has a special character - everything is fine
-            if(longEnough && hasSpecialChars) {
+            if(longEnough && hasSpecialChars) {     //HIEEEEEEEEEEEEEER
                 this.wrapperField.removeClass(this.warningClass + ' ' + this.errorClass).addClass(this.successClass);
                 this.passwordSubmitButton.attr('disabled', false);
             } else if(!hasSpecialChars && longEnough) { //if it is long enough but it has no special character set class warning

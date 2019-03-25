@@ -23,6 +23,7 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
     //if we try to click the submit button - JavaScript Method "onclick" - in our case this.passwordSubmitButton
 
     this.passwordField.onblur = function() {
+
         //the keyword "this" is always referring to its context.
         //onblur is an event which happens in "passwordField" -> so the keyword "this" would refer to the passwordField NOT to our class
         //therefore we previously saved "this" in a variable called "that"
